@@ -1,12 +1,12 @@
-package teskotlin.example.com
+package teskotlin.example.com.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import teskotlin.example.com.R
 
 class MainActivity : AppCompatActivity() {
     private val TAG = "MainActivity"
@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         btnLogin.setOnClickListener {
 
             if (username.text.toString() == userSuccess && password.text.toString() == passwordSuccess){
-                startActivity(Intent(this@MainActivity,Dashboard::class.java))
+                startActivity(Intent(this@MainActivity, DashboardActivity::class.java))
             }else if (username.text.toString() == "" || password.text.toString() == ""){
                 Toast.makeText(applicationContext,"Username atau Password Tidak Boleh Kosong",Toast.LENGTH_LONG).show()
             }else{
